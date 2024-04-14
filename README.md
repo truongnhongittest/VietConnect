@@ -1,14 +1,18 @@
-# Social project
+# VietConnect
 
-## Technologies
+Đồ án Công cụ phát triển phần mềm - Nhóm 16
 
-- c#
-- react js
-- pgsql
-- singal
-- docker
+## Thành viên
 
-## Architecture
+| Họ tên                | MSSV       |
+| --------------------- | ---------- |
+| Võ Thương Trường Nhơn | 2080600542 |
+| Phạm Anh Tuấn         | n/a        |
+| Đặng Đức Dũng         | n/a        |
 
-- cqrs & mediator pattern
-- clean Architech
+## Công nghệ chính
+
+- .net 6.0
+- Typescript
+- PostgreSQL
+- Docker

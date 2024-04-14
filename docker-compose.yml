@@ -5,24 +5,27 @@ version: "3.4"
 services:
   api:
     depends_on:
-      sqlserver: 
+      postgres: 
         condition: service_started
-    ports:
-      - "3001:80"
     build:
       context: .
-      dockerfile: src/CleanArchitecture/Dockerfile
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
     environment:
       - ASPNETCORE_ENVIRONMENT=docker
 
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+  postgres:
+    image: postgres
     ports:
-      - "1433:1433"
+      - 5432:5432
+    restart: always
     environment:
-      MSSQL_SA_PASSWORD: "MyPass@word"
-      ACCEPT_EULA: "Y"
-      MSSQL_USER: "sa"
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=reactivities
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
 
 volumes:
   app_data:
